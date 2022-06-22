@@ -1,11 +1,13 @@
 import PostCode from "./PostCode";
 import DatePicker from "./DatePicker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Seat from "./Seat";
 import "./Register.css";
 
 const Register = () => {
   const SEATS = true;
+  const [menu, setMenu] = useState(SEATS);
+
   const [fromAddress, setFromAddress] = useState({
     roadAddress: "출발주소",
     buildingName: "빌딩 이름",
@@ -14,7 +16,8 @@ const Register = () => {
     roadAddress: "도착지 주소",
     buildingName: "빌딩 이름",
   });
-  const [menu, setMenu] = useState(SEATS);
+
+  const [seatNumbers, setSeatNumbers] = useState([]);
 
   const setAddressInfo = (address, name, setFunc) => {
     setFunc({
@@ -22,12 +25,27 @@ const Register = () => {
       buildingName: name,
     });
   };
+
   const handleMenu = () => {
     setMenu(!menu);
   };
+
+  const handleSeatNumber = () => {};
+
   const handleClick = () => {
     // REST 요청
   };
+
+  useEffect(() => {
+    const arr = [];
+    for (let i = 1; i < 5; i++) {
+      arr.push({
+        id: i,
+        seatState: "able",
+      });
+    }
+    setSeatNumbers(arr);
+  }, []);
   return (
     <div className='register'>
       <div className='register-text'>
@@ -52,17 +70,26 @@ const Register = () => {
         <div className='register-column'>
           <div onClick={handleMenu} className='register-element register-time'>
             <div>출발시간</div>
+            <div className='from-clock'> - </div>
+            <div className='from-date'> 2022년 - 월 - 일</div>
           </div>
           <div onClick={handleMenu} className='register-element register-seat'>
             <div>좌석</div>
+            <div className='seat-title'> -번</div>
+            <div className='seat-place'>여성 -명</div>
           </div>
           <div className='register-element'>
-            <div>탑승 인원</div>
+            <div>모집 인원</div>
+            <div className='person-count'> - 명</div>
           </div>
         </div>
       </div>
       {menu ? (
-        <Seat handleMenu={handleMenu} />
+        <Seat
+          seatNumber={seatNumbers}
+          handleSeatNumber={handleSeatNumber}
+          handleMenu={handleMenu}
+        />
       ) : (
         <DatePicker handleMenu={handleMenu} />
       )}
