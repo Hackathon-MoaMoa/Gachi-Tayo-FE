@@ -1,4 +1,7 @@
 .seat{
+    position: absolute;
+    top: 295px;
+    right: 288px;
     background-image: url('./img/car.png');
     background-size: cover;
     width : 330px;

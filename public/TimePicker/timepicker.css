@@ -12,7 +12,9 @@
   h1{
     text-align:center;
   }
-  
+  .container{
+    display: flex;
+  }
   /*calendar*/
   .giz-calendar {
     margin:auto; /*this is optional property*/

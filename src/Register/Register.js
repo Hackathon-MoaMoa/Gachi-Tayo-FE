@@ -26,8 +26,12 @@ const Register = () => {
     });
   };
 
-  const handleMenu = () => {
-    setMenu(!menu);
+  const handleSeat = () => {
+    setMenu(SEATS);
+  };
+
+  const handleDateMenu = () => {
+    setMenu(!SEATS);
   };
 
   const handleSeatNumber = () => {};
@@ -68,12 +72,15 @@ const Register = () => {
           </div>
         </div>
         <div className='register-column'>
-          <div onClick={handleMenu} className='register-element register-time'>
+          <div
+            onClick={handleDateMenu}
+            className='register-element register-time'
+          >
             <div>출발시간</div>
             <div className='from-clock'> - </div>
             <div className='from-date'> 2022년 - 월 - 일</div>
           </div>
-          <div onClick={handleMenu} className='register-element register-seat'>
+          <div onClick={handleSeat} className='register-element register-seat'>
             <div>좌석</div>
             <div className='seat-title'> -번</div>
             <div className='seat-place'>여성 -명</div>
@@ -85,13 +92,9 @@ const Register = () => {
         </div>
       </div>
       {menu ? (
-        <Seat
-          seatNumber={seatNumbers}
-          handleSeatNumber={handleSeatNumber}
-          handleMenu={handleMenu}
-        />
+        <Seat seatNumber={seatNumbers} handleSeatNumber={handleSeatNumber} />
       ) : (
-        <DatePicker handleMenu={handleMenu} />
+        <DatePicker />
       )}
     </div>
   );
