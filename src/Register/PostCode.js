@@ -1,23 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDaumPostcodePopup } from "react-daum-postcode";
 
-const PostCode = () => {
+const PostCode = (props) => {
   const scriptUrl =
     "https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
   const open = useDaumPostcodePopup(scriptUrl);
-  const [roadAddress, setRoadAddress] = useState("도로명 주소");
-  const [buildingName, setBuildingName] = useState("빌딩 이름");
+  let roadAddress = props.selectAddress.roadAddress;
+  let buildingName = props.selectAddress.buildingName;
 
   const handleComplete = (data) => {
-    setRoadAddress(data.roadAddress);
-
     if (data.addressType === "R") {
       if (data.buildingName !== "") {
-        setBuildingName(data.buildingName);
+        roadAddress = data.roadAddress;
+        buildingName = data.buildingName;
+        props.setAddressInfo(roadAddress, buildingName, props.setFunc);
       }
     }
-
-    console.log(buildingName, roadAddress);
   };
 
   const handleClick = () => {
@@ -26,8 +24,6 @@ const PostCode = () => {
 
   return (
     <div>
-      <p>도로명주소 : {roadAddress}</p>
-      <p>도착지 : {buildingName} </p>
       <button type='button' onClick={handleClick}>
         Open
       </button>
