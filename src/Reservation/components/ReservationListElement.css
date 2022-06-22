@@ -1,0 +1,8 @@
+.list-element{
+    width: 992px;
+    height: 108px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 22px;
+    margin: 10px;
+}

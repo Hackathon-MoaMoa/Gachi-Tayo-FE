@@ -1,5 +1,7 @@
+import "./ReservationListElement.css";
+
 const ReservationListElement = () => {
-  return <div>hello</div>;
+  return <div className='list-element'>hello</div>;
 };
 
 export default ReservationListElement;
