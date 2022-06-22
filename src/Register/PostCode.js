@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDaumPostcodePopup } from "react-daum-postcode";
+import "./PostCode.css";
 
 const PostCode = (props) => {
   const scriptUrl =
     "https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
   const open = useDaumPostcodePopup(scriptUrl);
-  let roadAddress = props.selectAddress.roadAddress;
-  let buildingName = props.selectAddress.buildingName;
+  let [roadAddress, setRoadAddress] = useState(props.selectAddress.roadAddress);
+  let [buildingName, setBuildingName] = useState(
+    props.selectAddress.buildingName
+  );
 
   const handleComplete = (data) => {
     if (data.addressType === "R") {
       if (data.buildingName !== "") {
-        roadAddress = data.roadAddress;
-        buildingName = data.buildingName;
+        setRoadAddress(data.roadAddress);
+        setBuildingName(data.buildingName);
         props.setAddressInfo(roadAddress, buildingName, props.setFunc);
       }
     }
@@ -23,10 +26,9 @@ const PostCode = (props) => {
   };
 
   return (
-    <div>
-      <button type='button' onClick={handleClick}>
-        Open
-      </button>
+    <div className='post-code' onClick={handleClick}>
+      <div className='road-address'>{roadAddress}</div>
+      <div className='building-name'>{buildingName}</div>
     </div>
   );
 };
