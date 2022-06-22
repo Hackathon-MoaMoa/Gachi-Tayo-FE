@@ -20,3 +20,11 @@
     height : auto;
     padding: 30px;
 }
+
+.register-seat:hover{
+    cursor: pointer;
+}
+
+.register-time:hover{
+    cursor: pointer;
+}

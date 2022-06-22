@@ -1,9 +1,11 @@
 import PostCode from "./PostCode";
+import DatePicker from "./DatePicker";
 import { useState } from "react";
 import Seat from "./Seat";
 import "./Register.css";
 
 const Register = () => {
+  const SEATS = true;
   const [fromAddress, setFromAddress] = useState({
     roadAddress: "출발주소",
     buildingName: "빌딩 이름",
@@ -12,6 +14,7 @@ const Register = () => {
     roadAddress: "도착지 주소",
     buildingName: "빌딩 이름",
   });
+  const [menu, setMenu] = useState(SEATS);
 
   const setAddressInfo = (address, name, setFunc) => {
     setFunc({
@@ -19,7 +22,9 @@ const Register = () => {
       buildingName: name,
     });
   };
-
+  const handleMenu = () => {
+    setMenu(!menu);
+  };
   const handleClick = () => {
     // REST 요청
   };
@@ -45,10 +50,10 @@ const Register = () => {
           </div>
         </div>
         <div className='register-column'>
-          <div className='register-element'>
+          <div onClick={handleMenu} className='register-element register-time'>
             <div>출발시간</div>
           </div>
-          <div className='register-element'>
+          <div onClick={handleMenu} className='register-element register-seat'>
             <div>좌석</div>
           </div>
           <div className='register-element'>
@@ -56,7 +61,11 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <Seat />
+      {menu ? (
+        <Seat handleMenu={handleMenu} />
+      ) : (
+        <DatePicker handleMenu={handleMenu} />
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import './Seat.css';
+import "./Seat.css";
 
 const Seat = () => {
   return <div className='seat'></div>;
