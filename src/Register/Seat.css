@@ -2,5 +2,26 @@
     background-image: url('./img/car.png');
     background-size: cover;
     width : 330px;
-    height : 419px;
+    height : 440px;
+}
+
+.seat-img{
+    width: 85px;
+    height: 85px;
+}
+
+.front-seat{
+    position: relative;
+    top : 125px;
+    display: flex;
+    justify-content: space-between;
+    padding-left:39px;
+    padding-right:39px;
+}
+
+.back-seat{
+    display: flex;
+    position: relative;
+    top: 170px;
+    left: 35px;
 }
