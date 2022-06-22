@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-logo{
+padding : 30px;
+width: 127px;
+height: 31.92px;
+}
+
+.dummy{
+padding : 30px;
+width: 127px;
+height: 31.92px;
+}
+

@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+li{
+    list-style: none;
+    
+}
+
+.navbar-div{
+    margin: auto 0;
+    width : 355px;
+    height : 38px;
+}
+
