@@ -32,19 +32,11 @@ const ReservationSearch = () => {
 
   return (
     <div className='reservation-search'>
-      <PostCode
-        selectAddress={fromAddress}
-        setAddressInfo={setAddressInfo}
-        setFunc={setFromAddress}
-      />
-      <PostCode
-        selectAddress={toAddress}
-        setAddressInfo={setAddressInfo}
-        setFunc={setToAddress}
-      />
+      <PostCode selectAddress={fromAddress} setAddress={setFromAddress} />
+      <PostCode selectAddress={toAddress} setAddress={setToAddress} />
       <div className='radius'>
-        <div>반경</div>
-        <div>1km</div>
+        <div className='radius-title'>반경</div>
+        <div className='radius-content'>1km</div>
       </div>
       <button onClick={goAbout} className='reservation-btn'>
         <img
