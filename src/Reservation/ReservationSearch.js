@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ReservationSearch.css";
 import PostCode from "../Register/PostCode";
 import ReservationButton from "./img/reservation_button.png";

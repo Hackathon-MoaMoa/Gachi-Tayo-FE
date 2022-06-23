@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DummyData from "./components/DummyData";
 import ReservationListElement from "./components/ReservationListElement";
 import "./ReservationList.css";
 
-const ReservationList = () => {
-  const [requestData, setRequestData] = useState(DummyData);
+const ReservationList = (props) => {
+  const [requestData, setRequestData] = useState([]);
+
+  useEffect(() => {
+    console.log(props);
+    setRequestData(props.requestArray);
+  }, []);
   return (
     <div>
       <div className='title-element'>

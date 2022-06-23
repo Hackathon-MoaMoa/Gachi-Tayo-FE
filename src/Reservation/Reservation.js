@@ -16,14 +16,14 @@ const Reservation = () => {
       url: "https://gachi-tayo.shop/api/posts",
       responseType: "json",
     }).then((response) => {
-      console.log(response.data);
       setRequestArray(response.data);
     });
   }, []);
+
   return (
     <div className='reservation'>
       <ReservationSearch />
-      <ReservationList />
+      <ReservationList requestArray={requestArray} />
     </div>
   );
 };
