@@ -1,0 +1,20 @@
+table {
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse; 
+}
+
+.table-wapper {
+  width: 100%;
+}
+
+.table-row {
+  font-size: 20px;
+  font-weight: 400;
+  color: #9a9a9a;
+}
+
+th {
+  padding: 3rem;
+  padding-bottom: 1rem;
+}

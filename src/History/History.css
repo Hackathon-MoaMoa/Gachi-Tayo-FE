@@ -1,0 +1,19 @@
+.history-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 10px;  
+}
+
+.history-title {
+  font-size: 30px;
+  place-self: flex-start;
+  margin-top: 80px;
+}
+
+.history-title-thin {
+  font-weight: 800;
+}
