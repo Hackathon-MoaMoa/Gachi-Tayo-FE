@@ -14,16 +14,13 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [writeDto, setWriteDto] = useState({
-    p_id: -1,
-    u_id: UID,
-    start_address: "",
-    start_name: "",
-    end_address: "",
-    end_name: "",
-    start_date: "",
-    total_number: 4,
-    current_number: 1,
-    done: 0,
+    uid: UID,
+    startAddress: "",
+    startName: "",
+    endAddress: "",
+    endName: "",
+    startDate: "",
+    totalMember: 4,
   });
 
   const [fromAddress, setFromAddress] = useState({
@@ -48,16 +45,13 @@ const Register = () => {
     console.log("use Effect!");
 
     setWriteDto({
-      p_id: -1,
-      u_id: UID,
-      start_address: fromAddress.roadAddress,
-      start_name: fromAddress.buildingName,
-      end_address: toAddress.roadAddress,
-      end_name: toAddress.buildingName,
-      start_date: dateFormat,
-      total_number: 4,
-      current_number: 1,
-      done: 0,
+      uid: UID,
+      startAddress: fromAddress.roadAddress,
+      startName: fromAddress.buildingName,
+      endAddress: toAddress.roadAddress,
+      endName: toAddress.buildingName,
+      startDate: dateFormat,
+      totalMember: 4,
     });
   }, [dateFormat, fromAddress, toAddress, seatNumber]);
 
@@ -77,11 +71,15 @@ const Register = () => {
     console.dir(writeDto);
     axios({
       method: "post",
-      url: "/api/posts/write",
+      url: "https://gachi-tayo.shop/api/posts/write",
       data: writeDto,
-    }).then(() => {
-      navigate("/register_success");
-    });
+    })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .finally(() => {
+        navigate("/register_success");
+      });
   };
 
   return (
