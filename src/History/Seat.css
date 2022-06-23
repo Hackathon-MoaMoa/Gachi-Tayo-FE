@@ -1,0 +1,31 @@
+.seat-i{
+  background-image: url('');
+  position: static;
+  height: 280px;
+  margin-top: 75px;
+  float:left;
+  margin-left: 85px;
+}
+
+.seat-img-i{
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+}
+
+.front-seat-i{
+  display: flex;
+  justify-content: space-between;
+  padding-left:39px;
+  padding-right:39px;
+  position: initial;
+}
+
+.back-seat-i{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 39px;
+  padding-left:39px;
+  padding-right:39px;
+  position: initial;
+}

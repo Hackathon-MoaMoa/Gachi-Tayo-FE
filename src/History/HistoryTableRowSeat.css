@@ -1,0 +1,6 @@
+.seat-row {
+  border: 0px solid ;
+}
+.seat-row:hover {
+  cursor: default;
+}
