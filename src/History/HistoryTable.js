@@ -3,10 +3,16 @@ import HistoryTableRowSeat from "./HistoryTableRowSeat";
 import "./HistoryTable.css";
 import { useEffect, useState } from "react";
 
-const HistoryTable = () => {
+const HistoryTable = (props) => {
+  const [renderArray, setRenderArray] = useState([]);
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {});
+  useEffect(() => {
+    const pArr = props.rideArray;
+    console.log(pArr);
+    setRenderArray(pArr);
+    console.log("renderArray:", renderArray);
+  }, []);
 
   return (
     <div className='table-wapper'>
@@ -21,8 +27,16 @@ const HistoryTable = () => {
           </tr>
         </thead>
         <tbody>
-          <HistoryTableRow visible={visible} setVisible={setVisible} />
-          {visible && <HistoryTableRowSeat />}
+          {renderArray.map((e) => {
+            return (
+              <HistoryTableRow
+                visible={visible}
+                setVisible={setVisible}
+                elem={e}
+                index
+              />
+            );
+          })}
         </tbody>
       </table>
     </div>

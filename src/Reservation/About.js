@@ -21,6 +21,7 @@ const About = () => {
   const [startY, setStartY] = useState(0);
   const [endX, setEndX] = useState(0);
   const [endY, setEndY] = useState(0);
+  const [name, setName] = useState("이윤성");
 
   useEffect(() => {
     axios({
@@ -40,6 +41,15 @@ const About = () => {
       setStartY(response.data.startY);
       setEndX(response.data.endX);
       setEndY(response.data.endY);
+      setName(response.data.name);
+      setTime(
+        `${response.data.hour}:${response.data.minute}${
+          response.data.hour >= 12 ? "PM" : "AM"
+        }`
+      );
+      setDate(
+        `${response.data.year}년 ${response.data.month}월 ${response.data.day}일`
+      );
       const personFormat = `${response.data.remainMember}명/ ${response.data.totalMember}명`;
       setPersonCount(personFormat);
     });
@@ -103,11 +113,11 @@ const About = () => {
       </div>
       <Map
         className='kakao-map'
-        center={{ lat: startX, lng: startY }}
+        center={{ lat: startY, lng: startX }}
         style={{ width: "1155px", height: "700px" }}
       >
-        <MapMarker position={{ lat: startX, lng: startY }}></MapMarker>
-        <MapMarker position={{ lat: endX, lng: endY }}></MapMarker>
+        <MapMarker position={{ lat: startY, lng: startX }}></MapMarker>
+        <MapMarker position={{ lat: endY, lng: endX }}></MapMarker>
       </Map>
     </div>
   );
