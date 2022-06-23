@@ -6,12 +6,14 @@ import MainPage from "./Main/MainPage";
 import Register from "./Register/Register";
 import Reservation from "./Reservation/Reservation";
 import History from "./History/History";
+import About from "./Reservation/About";
 
 function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route path='/' element={<MainPage />} />
+        <Route path='/reservation/:pagenumber' element={<About />} />
         <Route path='/reservation' element={<Reservation />} />
         <Route path='/register' element={<Register />} />
         <Route path='/history' element={<History />} />
