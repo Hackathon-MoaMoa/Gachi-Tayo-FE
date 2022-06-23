@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import { Map, MapMarker } from "react-kakao-maps-sdk";
+import "./About.css";
 const About = () => {
   // 페이지 번호
   const params = useParams();
@@ -17,27 +18,39 @@ const About = () => {
   }, []);
 
   return (
-    <div>
+    <div className='about'>
       <div className='about-content'>
-        <div className='element'>
-          <div>출발지</div>
-          <div>{fromBuildingName}</div>
-          <div>{fromRoadAddress}</div>
+        <div className='about-element'>
+          <div className='about-element-title'>출발지</div>
+          <div className='about-bold'>{fromBuildingName}</div>
+          <div className='about-detail'>{fromRoadAddress}</div>
         </div>
-        <div className='element'>
-          <div>도착지</div>
-          <div>{toBuildingName}</div>
-          <div>{toRoadAddress}</div>
+        <div className='about-element'>
+          <div className='about-element-title'>도착지</div>
+          <div className='about-bold'>{toBuildingName}</div>
+          <div className='about-detail'>{toRoadAddress}</div>
         </div>
-        <div className='element'>
-          <div>출발 시각</div>
-          <div>{time}</div>
-          <div>{date}</div>
+        <div className='about-element'>
+          <div className='about-element-title'>출발 시각</div>
+          <div className='about-bold'>{time}</div>
+          <div className='about-detail'>{date}</div>
         </div>
-        <div className='element'>
-          <div>예약 가능 인원</div>
+        <div className='about-element'>
+          <div className='about-element-title'>예약 가능 인원</div>
+          <div className='about-bold'>{personCount}</div>
+        </div>
+        <div className='about-description'>
+          화살표 버튼을 누르면 예약이 완료됩니다.
         </div>
       </div>
+      <Map
+        className='kakao-map'
+        center={{ lat: 33.5563, lng: 126.79581 }}
+        style={{ width: "1155px", height: "700px" }}
+      >
+        <MapMarker position={{ lat: 33.55635, lng: 126.795841 }}></MapMarker>
+        <MapMarker position={{ lat: 33.55635, lng: 125.795853 }}></MapMarker>
+      </Map>
     </div>
   );
 };

@@ -1,0 +1,48 @@
+.about{
+    display: flex;
+}
+
+.about-content{
+    padding-top: 50px;
+}
+
+.kakao-map{
+    display: relative;
+    top: 24px;
+    left: 88px;
+}
+
+.about-element{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: 50px;
+}
+
+.about-element:after {
+    content: "";
+    display: block;
+    width: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #cfcfcf;
+  }
+
+.about-element-title{
+    
+}
+.about-bold{
+    font-size: 22px;
+    font-weight: 800;
+    padding-top: 7px;
+}
+
+.about-detail{
+    padding-top : 5px;
+    font-size: 13px;
+    color: #7d7d7d;
+}
+
+.about-description{
+    margin-left: 50px;
+    font-size: 12px;
+    color: #6c6c6c;
+}
