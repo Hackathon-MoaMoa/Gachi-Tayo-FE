@@ -9,6 +9,7 @@ import History from "./History/History";
 import About from "./Reservation/About";
 import RegisterSuccess from "./Register/RegisterSuccess";
 import ReservationSuccess from "./Reservation/ReservationSuccess";
+import SignUp from "./SignUp/SignUp";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/history' element={<History />} />
       </Route>
       <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<SignUp />} />
     </Routes>
   );
 }
