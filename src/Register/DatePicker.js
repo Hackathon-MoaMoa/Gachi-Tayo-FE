@@ -3,13 +3,12 @@ import "./DatePicker.css";
 
 const SERVER_URL = "http://localhost:3000";
 
-const DatePicker = () => {
+const DatePicker = (props) => {
   const [year, setYear] = useState("2022");
   const [month, setMonth] = useState("06");
   const [day, setDay] = useState("22");
   const [hour, setHour] = useState("18");
   const [min, setMin] = useState("30");
-  const [dateFormat, setDateFormat] = useState("");
 
   const iframePart = () => {
     return {
@@ -35,12 +34,17 @@ const DatePicker = () => {
           setHour(h);
           setMin(m);
           const strformat = `${year}-${month}-${day} ${hour}:${min}`;
-          setDateFormat(dateFormat);
+          const timeFormat = `${h}시 ${m}분`;
+          const ymdFormat = `${year}년${month}월${day}일`;
+
+          props.setDateFormat(strformat);
+          props.setTime(timeFormat);
+          props.setYmd(ymdFormat);
         }
       },
       false
     );
-  }, []);
+  }, [year, month, day, hour, min]);
 
   return (
     <div
