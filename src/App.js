@@ -8,6 +8,7 @@ import Reservation from "./Reservation/Reservation";
 import History from "./History/History";
 import About from "./Reservation/About";
 import RegisterSuccess from "./Register/RegisterSuccess";
+import ReservationSuccess from "./Reservation/ReservationSuccess";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<MainPage />} />
         <Route path='/reservation/:pagenumber' element={<About />} />
         <Route path='/reservation' element={<Reservation />} />
+        <Route path='/reservation_success' element={<ReservationSuccess />} />
         <Route path='/register' element={<Register />} />
         <Route path='/register_success' element={<RegisterSuccess />} />
         <Route path='/history' element={<History />} />
