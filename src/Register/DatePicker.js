@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./DatePicker.css";
 
-const SERVER_URL = "http://localhost:3000";
+const SERVER_URL = "https://gachi-tayo.shop/";
 
 const DatePicker = (props) => {
   const [year, setYear] = useState("2022");

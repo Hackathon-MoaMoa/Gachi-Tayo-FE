@@ -30,13 +30,7 @@ const Login = (props) => {
       },
     }).then((response) => {
       console.log(response.data);
-      if (response.data == 1) {
-        alert("로그인 성공!");
-        props.setUserIdNumber(response.data);
-        navigate("/");
-      } else {
-        alert("로그인 실패!");
-      }
+      navigate("/");
     });
   };
 
