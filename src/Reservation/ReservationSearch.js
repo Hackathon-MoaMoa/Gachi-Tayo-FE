@@ -1,5 +1,7 @@
+import "./ReservationSearch.css";
+
 const ReservationSearch = () => {
-  return <div>검색 창</div>;
+  return <div className='reservation-search'></div>;
 };
 
 export default ReservationSearch;
