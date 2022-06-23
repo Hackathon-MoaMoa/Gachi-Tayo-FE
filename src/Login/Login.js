@@ -5,7 +5,7 @@ import Logo from "./img/blue-logo.png";
 import Pattern from "./img/pattern.png";
 import "./Login.css";
 
-const Login = () => {
+const Login = (props) => {
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
@@ -32,6 +32,7 @@ const Login = () => {
       console.log(response.data);
       if (response.data == 1) {
         alert("로그인 성공!");
+        props.setUserIdNumber(response.data);
         navigate("/");
       } else {
         alert("로그인 실패!");

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Login from "./Login/Login";
@@ -12,6 +13,8 @@ import ReservationSuccess from "./Reservation/ReservationSuccess";
 import SignUp from "./SignUp/SignUp";
 
 function App() {
+  const [userIdNumber, setUserIdNumber] = useState(1);
+
   return (
     <Routes>
       <Route element={<Layout />}>
@@ -23,7 +26,11 @@ function App() {
         <Route path='/register_success' element={<RegisterSuccess />} />
         <Route path='/history' element={<History />} />
       </Route>
-      <Route path='/login' element={<Login />} />
+      <Route
+        path='/login'
+        element={<Login />}
+        setUserIdNumber={setUserIdNumber}
+      />
       <Route path='/signup' element={<SignUp />} />
     </Routes>
   );

@@ -4,9 +4,8 @@ import "./History.css";
 import axios from "axios";
 import HistoryTableRow from "./HistoryTableRow";
 import "./HistoryTable.css";
-
+import UID from "../UID";
 const History = () => {
-  const UID = 1;
   const [rideOks, setRideOks] = useState([]);
   const [rideWaits, setRideWaits] = useState([]);
 
