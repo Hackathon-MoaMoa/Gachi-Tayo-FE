@@ -3,21 +3,40 @@ import DatePicker from "./DatePicker";
 import { useEffect, useState } from "react";
 import Seat from "./Seat";
 import "./Register.css";
+import NextButton from "./img/next_button.png";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const SEATS = true;
-  const [menu, setMenu] = useState(SEATS);
+  const navigate = useNavigate();
+
+  const [writeDto, setWriteDto] = useState({
+    p_id: -1,
+    u_id: -1,
+    start_address: "",
+    start_name: "",
+    end_address: "",
+    end_name: "",
+    start_date: "",
+    total_number: 4,
+    current_number: 2,
+    done: 0,
+  });
 
   const [fromAddress, setFromAddress] = useState({
     roadAddress: "출발주소",
     buildingName: "빌딩 이름",
   });
+
   const [toAddress, setToAddress] = useState({
     roadAddress: "도착지 주소",
     buildingName: "빌딩 이름",
   });
 
-  const [seatNumbers, setSeatNumbers] = useState([]);
+  const [dateFormat, setDateFormat] = useState("");
+  const [menu, setMenu] = useState(SEATS);
+
+  const [seatNumber, setSeatNumber] = useState(0);
 
   const setAddressInfo = (address, name, setFunc) => {
     setFunc({
@@ -25,6 +44,8 @@ const Register = () => {
       buildingName: name,
     });
   };
+
+  const setRequestStartDate = (s) => {};
 
   const handleSeat = () => {
     setMenu(SEATS);
@@ -34,24 +55,19 @@ const Register = () => {
     setMenu(!SEATS);
   };
 
-  const handleSeatNumber = () => {};
-
-  const handleClick = () => {
-    // REST 요청
+  const handleSeatNumber = (number) => {
+    setSeatNumber(number);
   };
 
-  useEffect(() => {
-    const arr = [];
-    for (let i = 1; i < 5; i++) {
-      arr.push({
-        id: i,
-        seatState: "able",
-      });
-    }
-    setSeatNumbers(arr);
-  }, []);
+  const handleClick = () => {
+    navigate("/register_success");
+  };
+
   return (
     <div className='register'>
+      <button onClick={handleClick} className='register-btn'>
+        <img className='register-btn-img' src={NextButton} alt='nextbutton' />
+      </button>
       <div className='register-text'>
         <div className='register-column'>
           <div className='register-element'>
@@ -83,20 +99,19 @@ const Register = () => {
           </div>
           <div onClick={handleSeat} className='register-element register-seat'>
             <div>좌석</div>
-            <div className='seat-title'> -번</div>
+            <div className='seat-title'>
+              {" "}
+              {seatNumber == 0 ? "-" : seatNumber}번
+            </div>
             <div className='seat-place'>여성 -명</div>
           </div>
           <div className='register-element'>
             <div>모집 인원</div>
-            <div className='person-count'> - 명</div>
+            <div className='person-count'> 4명</div>
           </div>
         </div>
       </div>
-      {menu ? (
-        <Seat seatNumber={seatNumbers} handleSeatNumber={handleSeatNumber} />
-      ) : (
-        <DatePicker />
-      )}
+      {menu ? <Seat handleSeatNumber={handleSeatNumber} /> : <DatePicker />}
     </div>
   );
 };
