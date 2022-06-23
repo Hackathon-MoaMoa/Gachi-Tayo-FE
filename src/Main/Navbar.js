@@ -22,7 +22,7 @@ const Navbar = () => {
             style={({ isActive }) => (isActive ? activeStyle : inActiveStyle)}
             to='/reservation'
           >
-            예약
+            가치 타기
           </NavLink>
         </li>
         <li>
@@ -30,7 +30,7 @@ const Navbar = () => {
             style={({ isActive }) => (isActive ? activeStyle : inActiveStyle)}
             to='/register'
           >
-            등록
+            가치 타요
           </NavLink>
         </li>
         <li>
