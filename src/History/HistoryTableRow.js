@@ -1,9 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./HistoryTableRow.css";
+import HistoryTableRowSeat from "./HistoryTableRowSeat";
 
 const HistoryTableRow = (props) => {
+  const [visible, setVisible] = useState(false);
+
   const onClick = () => {
-    props.setVisible(!props.visible);
+    setVisible(!visible);
   };
   const getTimeString = () => {
     const strArr = props.elem.startDate.split(" ");
@@ -17,21 +20,24 @@ const HistoryTableRow = (props) => {
   };
 
   const getDateStrings = () => {
-    const dateStr = props.elem.startDate.split(" ")[0];
-    const newStr = dateStr.replace(/-/gi, ".");
-    return newStr;
+    const dateStr = props.elem.startDate.split(" ");
+    return dateStr[0];
   };
+
   return (
-    <tr onClick={onClick}>
-      <td>{props.elem.startName}</td>
-      <td>{props.elem.endName}</td>
-      <td>2022.06.03</td>
-      <td>
-        {getTimeString()}
-        {getAMorPM()}
-      </td>
-      <td>{props.elem.userList.length}명</td>
-    </tr>
+    <>
+      <tr onClick={onClick}>
+        <td>{props.elem.startName}</td>
+        <td>{props.elem.endName}</td>
+        <td>{getDateStrings()}</td>
+        <td>
+          {getTimeString()}
+          {getAMorPM()}
+        </td>
+        <td>{props.elem.userList.length}명</td>
+      </tr>
+      {visible ? <HistoryTableRowSeat /> : null}
+    </>
   );
 };
 

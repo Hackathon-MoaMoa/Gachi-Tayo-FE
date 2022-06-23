@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import HistoryTable from "./HistoryTable";
 import "./History.css";
 import axios from "axios";
+import HistoryTableRow from "./HistoryTableRow";
+import "./HistoryTable.css";
 
 const History = () => {
   const UID = 1;
@@ -42,7 +44,24 @@ const History = () => {
         평가 대기 중인{" "}
         <span className='history-title-thin'>작성한 글 ({rideOks.length})</span>
       </div>
-      <HistoryTable rideState={true} rideArray={rideOks} />
+      <div className='table-wapper'>
+        <table>
+          <thead className='table-row'>
+            <tr>
+              <th>출발지</th>
+              <th>도착지</th>
+              <th>출발 일자</th>
+              <th>출발 시각</th>
+              <th>인원</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rideOks.map((e) => {
+              return <HistoryTableRow elem={e} index />;
+            })}
+          </tbody>
+        </table>
+      </div>
       <div
         style={{
           borderBottom: "1px solid",
@@ -57,7 +76,24 @@ const History = () => {
           예약한 글 ({rideWaits.length})
         </span>
       </div>
-      <HistoryTable rideState={false} rideArray={rideWaits} />
+      <div className='table-wapper'>
+        <table>
+          <thead className='table-row'>
+            <tr>
+              <th>출발지</th>
+              <th>도착지</th>
+              <th>출발 일자</th>
+              <th>출발 시각</th>
+              <th>인원</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rideWaits.map((e) => {
+              return <HistoryTableRow elem={e} index />;
+            })}
+          </tbody>
+        </table>
+      </div>
       <div
         style={{
           borderBottom: "1px solid",
