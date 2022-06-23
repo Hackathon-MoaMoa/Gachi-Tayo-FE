@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import "./About.css";
+import NextButton from "./img/next_button.png";
+
 const About = () => {
   // 페이지 번호
+  const navigate = useNavigate();
   const params = useParams();
   const [pageNumber, setPageNumber] = useState(0);
   const [fromBuildingName, setFromBuildingName] = useState("시작주소");
@@ -17,6 +20,9 @@ const About = () => {
     setPageNumber(params.pagenumber);
   }, []);
 
+  const onClick = () => {
+    navigate("/reservation_success");
+  };
   return (
     <div className='about'>
       <div className='about-content'>
@@ -38,7 +44,16 @@ const About = () => {
         <div className='about-element'>
           <div className='about-element-title'>예약 가능 인원</div>
           <div className='about-bold'>{personCount}</div>
+
+          <button onClick={onClick} className='reservation-success-btn'>
+            <img
+              className='reservation-success-img'
+              src={NextButton}
+              alt='reservation button'
+            />
+          </button>
         </div>
+
         <div className='about-description'>
           화살표 버튼을 누르면 예약이 완료됩니다.
         </div>
