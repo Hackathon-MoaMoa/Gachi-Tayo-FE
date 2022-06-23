@@ -56,6 +56,7 @@ const Register = () => {
         <div className='register-column'>
           <div className='register-element'>
             <div>출발지</div>
+
             <PostCode
               selectAddress={fromAddress}
               setAddressInfo={setAddressInfo}
