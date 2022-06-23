@@ -1,0 +1,19 @@
+.post-code{
+    margin-left: 40px;
+}
+.post-code:hover{
+    cursor: pointer;
+}
+
+.road-address{
+    font-size: 22px;
+    font-weight: 800;
+    padding-top: 10px;
+}
+
+.building-name{
+    padding-top : 5px;
+    font-size: 13px;
+    color: #7d7d7d;
+}
+
