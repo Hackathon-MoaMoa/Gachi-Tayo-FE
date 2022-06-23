@@ -1,0 +1,99 @@
+.sign-up{
+    padding-top: 10%;
+    padding-left: 10%;
+}
+
+.blue-logo{
+    width: 70px;
+    height: 20px;
+}
+
+.sign-up-title{
+    margin-top: 35px;
+    font-weight: 800;
+    font-size: 34px;
+}
+
+.sign-up-content{
+    margin-top: 24px;
+    color: #7d7d7d;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.section-one{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    height: 30px;
+}
+.sign-up-name{
+    width: 130px;
+    height: inherit;
+    border : 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.sign-up-phone{
+    width: 130px;
+    height: inherit;
+    border : 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.section-two{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    height: 30px;
+}
+.sign-up-input-certi{
+    display: block;
+    width: 130px;
+    height: inherit;
+    border : 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.get-certi{
+    display: block;
+    width: 136px;
+    height: 36px;
+    color: white;
+    background-color: #d9d9d9;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.sign-up-id{
+    display: block;
+    margin-top: 20px;
+    width: 291px;
+    height: 30px;
+    border : 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.sign-up-pw{
+    display: block;
+    margin-top: 20px;
+    width: 291px;
+    height: 30px;
+    border : 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.sign-up-confirm-btn{
+    display: block;
+    margin-top: 20px;
+    width: 295px;
+    height: 40px;
+    color : white;
+    border: 1px solid #3E7BF3;
+    background-color: #3E7BF3;
+    border-radius: 4px;
+
+}
+

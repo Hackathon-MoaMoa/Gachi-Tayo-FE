@@ -1,7 +1,58 @@
 .pattern{
-    height: 100vh;
-    width: 280px;
     position: absolute;
+    height: 100vh;
+    width: 280px;    
     top : 0;
     left : 1100px;
+}
+.login{
+    padding-top: 15%;
+    padding-left: 10%;
+}
+
+.blue-logo{
+    width: 70px;
+    height: 20px;
+}
+
+.login-title{
+    font-weight: 800;
+    font-size: 40px;
+    padding-top: 10px;    
+}
+
+.login-text{
+    color: #7d7d7d;
+    font-weight: 500;
+    font-size: 16px;
+    padding-top:10px;
+}
+
+.sign-in-id{
+    display: block;
+    width: 294px;
+    height: 40px;
+    border: 1px solid #d9d9d9;
+    margin-top : 20px;    
+}
+.sign-in-passwd{
+    display: block;
+    width: 294px;
+    height: 40px;
+    border: 1px solid #d9d9d9;
+    margin-top : 13px;    
+}
+.login-button{
+    font-weight: 700;
+font-size: 16px;
+    width: 300px;
+    height: 45px;
+    color: white;
+    border: 1px solid #3E7BF3;
+    background-color: #3E7BF3;
+    margin-top: 15px;
+}
+.sign-up-button{
+    font-size: 14px;
+    margin-top : 10px;
 }

@@ -44,32 +44,32 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <img src={Logo} alt='logo' />
+    <div className='login'>
+      <img className='blue-logo' src={Logo} alt='logo' />
       <br />
+      <div className='login-title'>로그인</div>
+      <div className='login-text'>택시 합승자 매칭 웹 서비스</div>
       <input
         onChange={onIdChange}
         type='text'
         className='sign-in-id'
         placeholder='아이디'
         value={id}
-      />{" "}
-      <br />
+      />
+
       <input
         onChange={onPwChange}
         type='password'
         className='sign-in-passwd'
         placeholder='비밀번호'
         value={pw}
-      />{" "}
-      <br />
+      />
       <button onClick={onClick} className='login-button'>
         로그인
       </button>
-      <button onClick={onSignUp} className='sign-up-button'>
+      <div onClick={onSignUp} className='sign-up-button'>
         회원가입
-      </button>
-      {/* 회원가입 으로 링크되는 버튼 */}
+      </div>
       <img className='pattern' src={Pattern} alt='pattern' />
     </div>
   );

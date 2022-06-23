@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Logo from "../Login/img/blue-logo.png";
+import Pattern from "../Login/img/pattern.png";
+import "./SignUp.css";
 
 const SignUp = () => {
   const [id, setId] = useState("");
@@ -63,18 +66,54 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <input placeholder='아이디' onChange={handleId} value={id} />
-      <input placeholder='비밀번호' onChange={handlePw} value={pw} />
-      <input placeholder='이름' onChange={handleName} value={name} />
-      <input placeholder='전화번호' onChange={handlePhone} value={phone} />
+    <div className='sign-up'>
+      <img className='blue-logo' src={Logo} alt='logo' />
+      <div className='sign-up-title'>회원가입</div>
+      <div className='sign-up-content'>
+        회원가입을 위해 간단한 정보를 기입해주세요.
+      </div>
+      <div className='section-one'>
+        <input
+          className='sign-up-name'
+          placeholder='이름'
+          onChange={handleName}
+          value={name}
+        />
+        <input
+          className='sign-up-phone'
+          placeholder='전화번호'
+          onChange={handlePhone}
+          value={phone}
+        />
+      </div>
+      <div className='section-two'>
+        <input
+          className='sign-up-input-certi'
+          placeholder='인증번호'
+          onChange={handleCertiNum}
+          value={certiNumInput}
+        />
+        <button className='get-certi' onClick={getCertiNum}>
+          인증번호 받기
+        </button>
+      </div>
       <input
-        placeholder='인증번호'
-        onChange={handleCertiNum}
-        value={certiNumInput}
+        className='sign-up-id'
+        placeholder='아이디'
+        onChange={handleId}
+        value={id}
       />
-      <button onClick={getCertiNum}>인증번호 받기</button>
-      <button onClick={onSignUp}>회원가입</button>
+      <input
+        className='sign-up-pw'
+        placeholder='비밀번호'
+        onChange={handlePw}
+        value={pw}
+      />
+
+      <button className='sign-up-confirm-btn' onClick={onSignUp}>
+        회원가입
+      </button>
+      <img className='pattern' src={Pattern} alt='pattern' />
     </div>
   );
 };
