@@ -1,6 +1,7 @@
 import axios from "axios";
 import ReservationSearch from "./ReservationSearch";
-import ReservationList from "./ReservationList";
+import ReservationListElement from "./components/ReservationListElement";
+import "./ReservationList.css";
 import "./Reservation.css";
 import { useEffect, useState } from "react";
 
@@ -23,7 +24,18 @@ const Reservation = () => {
   return (
     <div className='reservation'>
       <ReservationSearch />
-      <ReservationList requestArray={requestArray} />
+      <div>
+        <div className='title-element'>
+          <div className='title-list-element'>출발지</div>
+          <div className='title-list-element'>도착지</div>
+          <div className='title-list-element'>출발 일자</div>
+          <div className='title-list-element'>출발 시각</div>
+          <div className='title-list-element'>인원 현황</div>
+        </div>
+        {requestArray.map((e) => {
+          return <ReservationListElement reservationContent={e} />;
+        })}
+      </div>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { Map, MapMarker } from "react-kakao-maps-sdk";
 import "./About.css";
 import NextButton from "./img/next_button.png";
 
+const UID = 3;
 const About = () => {
   // 페이지 번호
   const navigate = useNavigate();
@@ -22,6 +23,8 @@ const About = () => {
   const [endX, setEndX] = useState(0);
   const [endY, setEndY] = useState(0);
   const [name, setName] = useState("이윤성");
+  const [uid, setUid] = useState(0);
+  const [pid, setPid] = useState(0);
 
   useEffect(() => {
     axios({
@@ -42,6 +45,8 @@ const About = () => {
       setEndX(response.data.endX);
       setEndY(response.data.endY);
       setName(response.data.name);
+      setPid(response.data.pid);
+      setUid(response.data.uid);
       setTime(
         `${response.data.hour}:${response.data.minute}${
           response.data.hour >= 12 ? "PM" : "AM"
@@ -63,17 +68,13 @@ const About = () => {
       method: "post",
       url: "https://gachi-tayo.shop/api/reservation",
       data: {
-        u_id: 2,
-        p_id: 1,
-        seat_number: 2,
+        u_id: UID,
+        p_id: pid,
+        seat_number: 4,
       },
     }).then(function (response) {
       console.log(response.data);
-      if (response.data) {
-        navigate("/reservation_success");
-      } else {
-        alert("잘못된 정보입니다! ");
-      }
+      navigate("/reservation_success");
     });
   };
   return (

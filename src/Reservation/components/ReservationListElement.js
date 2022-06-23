@@ -15,14 +15,22 @@ const ReservationListElement = (props) => {
     navi(url);
   };
 
-  console.log();
   return (
     <div onClick={onClick} className='list-element'>
-      <div className='element'>{props.reservationContent.startAddress}</div>
-      <div className='element'>{props.reservationContent.endAddress}</div>
-      <div className='element'>{props.reservationContent.startDate}</div>
-      <div className='element'>{props.reservationContent.startTime}</div>
-      <div className='element'>{props.reservationContent.remainSeat}</div>
+      <div className='element'>{props.reservationContent.startName}</div>
+      <div className='element'>{props.reservationContent.endName}</div>
+      <div className='element'>{`${props.reservationContent.startDate.substr(
+        0,
+        4
+      )}년 ${props.reservationContent.startDate.substr(
+        5,
+        2
+      )}월 ${props.reservationContent.startDate.substr(8, 2)}일`}</div>
+      <div className='element'>{`${props.reservationContent.startDate.substr(
+        11,
+        2
+      )}:${props.reservationContent.startDate.substr(14, 2)}`}</div>
+      <div className='element'>{`${props.reservationContent.currentMember}명 / ${props.reservationContent.totalMember}명`}</div>
     </div>
   );
 };
