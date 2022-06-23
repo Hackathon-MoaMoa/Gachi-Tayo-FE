@@ -4,14 +4,16 @@ header{
 }
 
 .main-logo{
-padding : 30px;
-width: 127px;
-height: 31.92px;
+position: relative;
+top : 65px;
+left : 80px;
+width: 114px;
+height: 26px;
 }
 
 .dummy{
 padding : 30px;
-width: 127px;
-height: 31.92px;
+width: 100px;
+height: 24px;
 }
 
