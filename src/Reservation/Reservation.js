@@ -23,7 +23,7 @@ const Reservation = () => {
 
   return (
     <div className='reservation'>
-      <ReservationSearch />
+      <ReservationSearch setRequestArray={setRequestArray} />
       <div>
         <div className='title-element'>
           <div className='title-list-element'>출발지</div>
