@@ -32,9 +32,9 @@ const PostCode = (props) => {
   };
 
   return (
-    <div className='post-code' onClick={handleClick}>
-      <div className='road-address'>{roadAdd}</div>
-      <div className='building-name'>{buildName}</div>
+    <div className='post-code-i' onClick={handleClick}>
+      <div className='road-address-i'>{roadAdd}</div>
+      <div className='building-name-i'>{buildName}</div>
     </div>
   );
 };

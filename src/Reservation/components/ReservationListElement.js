@@ -22,10 +22,10 @@ const ReservationListElement = (props) => {
       <div className='element'>{`${props.reservationContent.startDate.substr(
         0,
         4
-      )}년 ${props.reservationContent.startDate.substr(
+      )}.${props.reservationContent.startDate.substr(
         5,
         2
-      )}월 ${props.reservationContent.startDate.substr(8, 2)}일`}</div>
+      )}.${props.reservationContent.startDate.substr(8, 2)}`}</div>
       <div className='element'>{`${props.reservationContent.startDate.substr(
         11,
         2
