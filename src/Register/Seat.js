@@ -7,11 +7,13 @@ import Seat2 from "./img/seat2.png";
 import Seat3 from "./img/seat3.png";
 import Seat4 from "./img/seat4.png";
 
-const Seat = () => {
+const Seat = (props) => {
   const [checkSeat, setCheckSeat] = useState(0);
 
   const onCheck = (e) => {
-    setCheckSeat(parseInt(e.target.alt));
+    const num = parseInt(e.target.alt);
+    setCheckSeat(num);
+    props.handleSeatNumber(num);
   };
 
   const onUnCheck = () => {
