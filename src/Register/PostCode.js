@@ -13,11 +13,13 @@ const PostCode = (props) => {
 
   const handleComplete = (data) => {
     if (data.addressType === "R") {
+      setRoadAddress(data.roadAddress);
       if (data.buildingName !== "") {
-        setRoadAddress(data.roadAddress);
         setBuildingName(data.buildingName);
-        props.setAddressInfo(roadAddress, buildingName, props.setFunc);
+      } else {
+        setBuildingName("건물 명");
       }
+      props.setAddressInfo(roadAddress, buildingName, props.setFunc);
     }
   };
 
