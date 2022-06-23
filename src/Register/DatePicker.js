@@ -33,7 +33,7 @@ const DatePicker = (props) => {
           setDay(d);
           setHour(h);
           setMin(m);
-          const strformat = `${year}-${month}-${day} ${hour}:${min}`;
+          const strformat = `${year}-${month}-${day}T${hour}:${min}:30.269+00:00`;
           const timeFormat = `${h}시 ${m}분`;
           const ymdFormat = `${year}년${month}월${day}일`;
 
