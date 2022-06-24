@@ -6,7 +6,6 @@
 
 ## 2. 팀 소개
 * 팀 명: 모아모아
-* 팀원 소개:
 ![팀소개2](https://user-images.githubusercontent.com/75000923/175468337-22375c8c-e1ac-4b59-b0eb-3a1e71600589.png)  
 
 
